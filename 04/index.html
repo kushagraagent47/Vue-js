@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>VUE JS</title>
+  </head>
+  <body class="bg-dark text-white">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-12" id="vapp">
+          <h2 class="display-3 bg-success">Your bill is: {{finalBill}}</h2>
+          <div v-for="(course, index) in courseList" class="card mt-3 vapp" style="width: 18rem" :key="course.id">
+            <img :src="course.courseImage" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-dark">{{course.courseName}}</h5>
+              <p class="card-text text-dark">{{course.subtitle}}</p>
+              <p class="text-center bg-success">${{course.price}}</p><br>
+              <a :href="urlLink" @click="addToHolder(course)" class="btn btn-block btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
