@@ -1,5 +1,5 @@
 <template>
-  <div class="list-group">
+  <div v-for="repo of repos" :key="repo.id" class="list-group">
     <a
       :href="repo.html_url"
       target="_blank"
@@ -52,6 +52,9 @@ export default {
         this.repos = data;
       }
     },
+  },
+  mounted() {
+    this.fetchData();
   },
 };
 </script>

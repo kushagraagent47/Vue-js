@@ -8,12 +8,14 @@ import router from "./router";
 import store from "./store";
 
 //FIREBASE
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/auth";
 
 import firebaseConfig from "./utils/config";
 
 firebase.initializeApp(firebaseConfig);
+
+store.dispatch("checkAuth");
 
 const app = createApp(App);
 

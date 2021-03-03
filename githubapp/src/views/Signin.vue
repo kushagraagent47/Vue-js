@@ -88,6 +88,7 @@ export default {
           this.$router.push({ path: "/" });
         })
         .catch((error) => {
+          console.log(error.message);
           return this.$swal(error.message);
         });
     },
